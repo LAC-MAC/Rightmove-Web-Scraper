@@ -1,0 +1,13 @@
+I got fed up of manually looking for flats so I created a rightmove web scraper. The code is pretty simple to follow and uses html soup. 
+To get the correct URLs, first do a search on Rightmove, that URL is the first base URL. It looks something like this: 
+
+https://www.rightmove.co.uk/property-to-rent/find.html?searchType=RENT&locationIdentifier=REGION%5E93598&insId=1&radius=0.0&minPrice=&maxPrice=&minBedrooms=&maxBedrooms=&displayPropertyType=&maxDaysSinceAdded=&sortByPriceDescending=&_includeLetAgreed=on&primaryDisplayPropertyType=&secondaryDisplayPropertyType=&oldDisplayPropertyType=&oldPrimaryDisplayPropertyType=&letType=&letFurnishType=&houseFlatShare=
+
+If that search returns more than one page then navigate to the next page i.e page 2. This URL will now have an Index variable in it as well. This URL is used inside the loop and the index is calculated by a method based on the number of pages. The URL will look like this: 
+
+https://www.rightmove.co.uk/property-to-rent/find.html?locationIdentifier=REGION%5E93598&index=24&propertyTypes=&includeLetAgreed=false&mustHave=&dontShow=&furnishTypes=&keywords=
+
+
+I have the same script also working for Zoopla and I will upload in a couple of days. 
+
+I will also work on a way to serialize the matches so that they can be compared each time the script is run, so that only the new resutls are returned. 
